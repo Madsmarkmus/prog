@@ -17,6 +17,16 @@ public class SittingDuck extends JuniorRobot
 		// Some color codes: blue, yellow, black, white, red, pink, brown, grey, orange...
 		// Sets these colors (robot parts): body, gun, radar, bullet, scan_arc
 		setColors(orange, blue, white, yellow, black);
+			//HVIS START I MIDTEN
+		
+		if (robotX <= (fieldWidth*0.5) && robotY < fieldHeight-25 && robotY > 25) {
+		turnTo(270);
+		ahead(fieldWidth-(fieldWidth-robotX)-25);
+		}
+		if (robotX > (fieldWidth*0.5) && robotY < fieldHeight-25 && robotY > 25) {
+		turnTo(90);
+		ahead(fieldWidth-robotX-25);
+		}
 	}
 
 	/**
