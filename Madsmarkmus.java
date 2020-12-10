@@ -103,6 +103,11 @@ public class Madsmarkmus extends JuniorRobot
 	public void onHitRobot() {
 		antalRamt ++;
 	}
-
+	
+	public void onScanneRobot() {
+		turnGunTo(scannedAngle);
+		fire(2);
+		turnGunTo(-scannedAngle);
+	}
 	
 }
