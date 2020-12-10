@@ -29,21 +29,32 @@ public class Madsmarkmus extends JuniorRobot
 		
 		//HVIS PÅ KØRELINJEN
 		
+		int antalRunder = 0;
+		
 		if (robotX == 25){
 			turnTo(0);
 			ahead(fieldHeight-robotY-25);
+			fire(3);
 		}
 		if (robotX == (fieldWidth-25)){
 			turnTo(180);
 			ahead(robotY-25);
+			fire(3);
 		}
 		if (robotY == 25){
 			turnTo(270);
 			ahead(fieldWidth-(fieldWidth-robotX)-25);
+			fire(3);
 		}
 		if (robotY == (fieldHeight-25)) {
 			turnTo(90);
 			ahead(fieldWidth-robotX-25);
+			fire(3);
+		}
+		
+		if (antalRunder == 4) {
+				
+		}
 		}
 
 		//HVIS START I MIDTEN
@@ -52,7 +63,7 @@ public class Madsmarkmus extends JuniorRobot
 		turnTo(270);
 		turnGunTo(0);
 		ahead(fieldWidth-(fieldWidth-robotX)-25);
-		turnGunTo(gunHeading-90);
+	
 		}
 		if (robotX > (fieldWidth*0.5) && robotY < fieldHeight-25 && robotY > 25) {
 		turnTo(90);
@@ -60,20 +71,10 @@ public class Madsmarkmus extends JuniorRobot
 		turnGunTo(gunHeading+90);
 		}	
 		
+		turnGunTo(heading+90);		
+
 	}
 	
-	public void onHitRobot() {
-		turnGunLeft(360);
-		turnGunTo(scannedAngle);
-		ahead(-20);
-		ahead(scannedDistance);		
-	}
-	
-	public void onScannedRobot() {
-		turnGunTo(scannedAngle);
-		fire(2);
-		
-		
-	}
+
 	
 }
